@@ -25,7 +25,7 @@
 
 package me.jamiemansfield.excelmod;
 
-import me.jamiemansfield.excel.mod.ModDescriptor;
+import me.jamiemansfield.excel.mod.descriptor.ModDescriptor;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

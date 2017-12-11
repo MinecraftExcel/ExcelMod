@@ -26,7 +26,7 @@
 package me.jamiemansfield.excelmod.launch;
 
 import me.jamiemansfield.excel.mod.ModContainer;
-import me.jamiemansfield.excel.mod.ModDescriptor;
+import me.jamiemansfield.excel.mod.descriptor.ModDescriptor;
 import me.jamiemansfield.excel.util.Namespace;
 
 import java.util.Optional;

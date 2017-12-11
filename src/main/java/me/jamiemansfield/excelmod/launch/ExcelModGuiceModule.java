@@ -26,7 +26,7 @@
 package me.jamiemansfield.excelmod.launch;
 
 import com.google.inject.AbstractModule;
-import me.jamiemansfield.excel.mod.ModDescriptor;
+import me.jamiemansfield.excel.mod.descriptor.ModDescriptor;
 
 class ExcelModGuiceModule extends AbstractModule {
 

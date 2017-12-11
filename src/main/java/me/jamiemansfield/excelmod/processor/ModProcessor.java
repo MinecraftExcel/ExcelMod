@@ -31,7 +31,8 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import me.jamiemansfield.excel.mod.ModDescriptor;
+import me.jamiemansfield.excel.mod.descriptor.ModDescriptor;
+import me.jamiemansfield.excel.mod.descriptor.ModJsonFormat;
 import me.jamiemansfield.excel.util.ap.AnnotationProcessor;
 import me.jamiemansfield.excelmod.Mod;
 import me.jamiemansfield.excelmod.SharedConstants;
@@ -58,12 +59,12 @@ import javax.lang.model.element.TypeElement;
  * Should a mod developer choose to produce the mod descriptor themselves,
  * the annotation processor will acknowledge that, and not recreate the file.
  */
-@SupportedAnnotationTypes("me.jamiemansfield.excel.mod.Mod")
+@SupportedAnnotationTypes("me.jamiemansfield.excelmod.Mod")
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class ModProcessor extends AnnotationProcessor {
 
     private static final Gson gson = new GsonBuilder()
-            .registerTypeHierarchyAdapter(ModDescriptor.class, new ModDescriptor.Serialiser())
+            .registerTypeHierarchyAdapter(ModDescriptor.class, new ModJsonFormat.Serialiser())
             .create();
 
     @Override
