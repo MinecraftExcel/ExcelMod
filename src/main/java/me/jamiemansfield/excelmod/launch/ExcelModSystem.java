@@ -33,6 +33,7 @@ import me.jamiemansfield.excel.launch.mod.system.IModSystem;
 import me.jamiemansfield.excel.launch.mod.system.ModSystem;
 import me.jamiemansfield.excel.mod.ModContainer;
 import me.jamiemansfield.excelmod.ExcelMod;
+import me.jamiemansfield.excelmod.SharedConstants;
 import net.minecraft.launchwrapper.Launch;
 
 import java.io.IOException;
@@ -44,7 +45,7 @@ import java.util.zip.ZipFile;
 /**
  * The <pre>Excel</pre> mod system implementation.
  */
-@ModSystem("excelmod")
+@ModSystem(SharedConstants.ID)
 public class ExcelModSystem implements IModSystem {
 
     @Override

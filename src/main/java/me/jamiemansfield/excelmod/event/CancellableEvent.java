@@ -23,30 +23,32 @@
  * THE SOFTWARE.
  */
 
-package me.jamiemansfield.excelmod;
-
-import me.jamiemansfield.excelmod.event.EventBus;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+package me.jamiemansfield.excelmod.event;
 
 /**
- * The 'brains of the operation'.
+ * An interface used to describe an event as being cancellable.
  */
-public final class ExcelMod {
+public interface CancellableEvent extends Event {
 
     /**
-     * The {@link Logger} used internally by ExcelMod.
+     * Gets weather the {@link Event} has been cancelled.
      *
-     * <b>Mods should not used this {@link Logger}!</b>
+     * @return {@code True} if the event has been cancelled, {@code false} otherwise
      */
-    public static final Logger log = LogManager.getLogger("ExcelMod");
+    boolean isCancelled();
 
     /**
-     * The {@link EventBus} used by ExcelMod.
+     * Sets weather the {@link Event} has been cancelled.
+     *
+     * @param cancel {@code True} if the event has been cancelled, {@code false} otherwise
      */
-    public static final EventBus eventBus = new EventBus();
+    void setCancelled(final boolean cancel);
 
-    private ExcelMod() {
+    /**
+     * Cancels the {@link Event}.
+     */
+    default void cancel() {
+        this.setCancelled(true);
     }
 
 }

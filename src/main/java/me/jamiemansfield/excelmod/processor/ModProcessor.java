@@ -61,7 +61,7 @@ import javax.lang.model.element.TypeElement;
  */
 @SupportedAnnotationTypes("me.jamiemansfield.excelmod.Mod")
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
-public class ModProcessor extends AnnotationProcessor {
+public final class ModProcessor extends AnnotationProcessor {
 
     private static final Gson gson = new GsonBuilder()
             .registerTypeHierarchyAdapter(ModDescriptor.class, new ModJsonFormat.Serialiser())

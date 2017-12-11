@@ -23,30 +23,43 @@
  * THE SOFTWARE.
  */
 
-package me.jamiemansfield.excelmod;
-
-import me.jamiemansfield.excelmod.event.EventBus;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+package me.jamiemansfield.excelmod.event;
 
 /**
- * The 'brains of the operation'.
+ * The ExcelMod event bus.
  */
-public final class ExcelMod {
+public class EventBus {
 
     /**
-     * The {@link Logger} used internally by ExcelMod.
+     * Registers the given event subscriber to the given mod.
      *
-     * <b>Mods should not used this {@link Logger}!</b>
+     * @param mod The mod instance
+     * @param subscriber The subscriber to register
      */
-    public static final Logger log = LogManager.getLogger("ExcelMod");
+    public void register(final Object mod, final Object subscriber) {
+        // TODO: implement
+    }
 
     /**
-     * The {@link EventBus} used by ExcelMod.
+     * Registers the given {@link EventSubscriber} to the given mod.
+     *
+     * @param mod The mod instance
+     * @param subscriber The subscriber to register
      */
-    public static final EventBus eventBus = new EventBus();
+    public void register(final Object mod, final EventSubscriber subscriber) {
+        // TODO: implement
+    }
 
-    private ExcelMod() {
+    /**
+     * Fires the given event.
+     *
+     * @param event The event
+     * @param <E> The type of event
+     * @return The event
+     */
+    public <E extends Event> E fire(final E event) {
+        // TODO: implement
+        return event;
     }
 
 }

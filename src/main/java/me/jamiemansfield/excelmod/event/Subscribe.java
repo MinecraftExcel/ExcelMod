@@ -23,30 +23,19 @@
  * THE SOFTWARE.
  */
 
-package me.jamiemansfield.excelmod;
+package me.jamiemansfield.excelmod.event;
 
-import me.jamiemansfield.excelmod.event.EventBus;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * The 'brains of the operation'.
+ * An annotation used to allow plugins to 'subscribe' to a given {@link Event}.
+ * The event that will be subscribed to will be the sole parameter in the method
+ * this annotation annotates.
  */
-public final class ExcelMod {
-
-    /**
-     * The {@link Logger} used internally by ExcelMod.
-     *
-     * <b>Mods should not used this {@link Logger}!</b>
-     */
-    public static final Logger log = LogManager.getLogger("ExcelMod");
-
-    /**
-     * The {@link EventBus} used by ExcelMod.
-     */
-    public static final EventBus eventBus = new EventBus();
-
-    private ExcelMod() {
-    }
-
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface Subscribe {
 }
