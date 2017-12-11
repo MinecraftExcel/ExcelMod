@@ -28,11 +28,11 @@ package me.jamiemansfield.excelmod.launch;
 import com.google.common.base.Strings;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import me.jamiemansfield.excel.ExcelLoader;
 import me.jamiemansfield.excel.launch.mod.ModCandidate;
 import me.jamiemansfield.excel.launch.mod.system.IModSystem;
 import me.jamiemansfield.excel.launch.mod.system.ModSystem;
 import me.jamiemansfield.excel.mod.ModContainer;
+import me.jamiemansfield.excelmod.ExcelMod;
 import net.minecraft.launchwrapper.Launch;
 
 import java.io.IOException;
@@ -67,11 +67,11 @@ public class ExcelModSystem implements IModSystem {
                 final Object instance = injector.getInstance(clazz);
                 return Optional.of(new ExcelModContainer(modCandidate.getDescriptor(), instance));
             } catch (final ClassNotFoundException ex) {
-                ExcelLoader.log.warn("Failed to find the mod class!", ex);
+                ExcelMod.log.warn("Failed to find the mod class!", ex);
                 return Optional.empty();
             }
         } catch (final IOException ex) {
-            ExcelLoader.log.warn("Failed to load a mod candidate!", ex);
+            ExcelMod.log.warn("Failed to load a mod candidate!", ex);
             return Optional.empty();
         }
     }
