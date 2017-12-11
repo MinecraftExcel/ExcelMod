@@ -1,0 +1,3 @@
+[submodule "ExcelLoader"]
+	path = ExcelLoader
+	url = https://github.com/MinecraftExcel/ExcelLoader.git
